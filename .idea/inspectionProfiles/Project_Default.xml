@@ -1,0 +1,53 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E301" />
+          <option value="E302" />
+          <option value="W292" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="wb.models.Slider.*" />
+          <option value="wb.models.Service.*" />
+          <option value="wb.models.About.objects" />
+          <option value="wb.models.Package.feature_set" />
+          <option value="wb.views.ContactViewView" />
+          <option value="wb.models.Video.objects" />
+          <option value="wb.models.Package.objects" />
+          <option value="wb.models.Website_Settings.object" />
+          <option value="wb.models.Website_Settings.objects" />
+          <option value="wb.models.Portfolio.objects" />
+          <option value="iPortfolio.models.User.objects" />
+          <option value="iPortfolio.models.Text.objects" />
+          <option value="iPortfolio.models.About.objects" />
+          <option value="iPortfolio.models.Fact.objects" />
+          <option value="iPortfolio.models.Skill.objects" />
+          <option value="iPortfolio.models.Description.objects" />
+          <option value="iPortfolio.models.Service.objects" />
+          <option value="iPortfolio.models.Testimonial.objects" />
+          <option value="iPortfolio.models.PortfolioApps.objects" />
+          <option value="iPortfolio.models.PortfolioCards.objects" />
+          <option value="iPortfolio.models.PortfolioWeb.objects" />
+          <option value="iPortfolio.models.Navbar.objects" />
+          <option value="iPortfolio.models.Favicon.objects" />
+          <option value="iPortfolio.models.Copyright.objects" />
+          <option value="iPortfolio.models.Resume.resumedescription_set" />
+          <option value="portfolio.models.Site_Info.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
