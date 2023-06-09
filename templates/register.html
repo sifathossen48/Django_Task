@@ -1,0 +1,103 @@
+{% extends 'bash.html'%}
+{% load static %}
+{% block main_container %}
+<div class="content-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card" data-aos="fade-up">
+                <div class="card-body">
+                  <div class="aboutus-wrapper">
+                    <h1 class="mt-5 text-center mb-5">
+                      Registration
+                    </h1>
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+                    <div class="row">
+                      <div class="col-lg-12 mb-5 mb-sm-2">
+                        <form method="post" action="{% url 'register' %}">
+                          {% csrf_token %}
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="form-group">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="first_name"
+                                  name="first_name"
+                                  aria-describedby="first name"
+                                  placeholder="First Name *"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="form-group">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="last_name"
+                                   name="last_name"
+                                  aria-describedby="last name"
+                                  placeholder="Last Name *"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="form-group">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="user_name"
+                                  name="username"
+                                  aria-describedby="user name"
+                                  placeholder="User Name *"
+                                />
+                              </div>
+                            </div>
+                             <div class="col-sm-6">
+                              <div class="form-group">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="email"
+                                  name="email"
+                                  aria-describedby="email"
+                                  placeholder="Email *"
+                                />
+                              </div>
+                            </div>
+                             <div class="col-sm-6">
+                              <div class="form-group">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="password"
+                                  name="password"
+                                  aria-describedby="password"
+                                  placeholder="Password *"
+                                />
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <div class="form-group">
+                                  <button class="btn btn-lg btn-dark" type="submit">Register</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

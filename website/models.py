@@ -103,7 +103,6 @@ class SportLight(models.Model):
         return self.title[:15]
     def get_sportlight_related_posts(self):
         return SportLight.objects.filter(is_active=True, tegs__in=self.tegs.all())[:2]
-
     def get_middleNews_related_posts(self):
         return SportLight.objects.filter(is_display=True, tegs__in=self.tegs.all())[:2]
     def get_celebrityNews_related_posts(self):
