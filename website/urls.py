@@ -6,5 +6,7 @@ urlpatterns = [
     path('article/detail/<int:article_id>', views.ArticleDetailView.as_view(), name='article-details'),
     path('sportLightNews/detail/<int:sportLightNews_id>', views.SportLightNewsDetailView.as_view(), name='sport-light-news-details'),
     path('sportLightMiddleNews/detail/<int:middleNews_id>', views.SportLightMiddleNewsDetailView.as_view(), name='sport-light-middle-news-details'),
-    path('celebrityNews/detail/<int:cn_id>', views.CelebrityNewsView.as_view(), name='celebrity-news-details')
+    path('celebrityNews/detail/<int:cn_id>', views.CelebrityNewsView.as_view(), name='celebrity-news-details'),
+    path('article/comment/<int:article_id>', views.CommentView.as_view(), name='article-comment'),
+    path('contact/', views.ContactUsView.as_view(), name='contact-us')
 ]

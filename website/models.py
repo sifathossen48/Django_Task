@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -59,6 +60,9 @@ class Article(models.Model):
     def get_related_posts(self):
         return Article.objects.filter(tegs__in=self.tegs.all())[:2]
 
+    def get_comment(self):
+        return self.comment_set.all()
+
     def __str__(self):
         return self.title
 
@@ -109,3 +113,12 @@ class SportLight(models.Model):
         return SportLight.objects.filter(is_celebrity_news=True, tegs__in=self.tegs.all())[:2]
     def __str__(self):
         return self.title
+class Comment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now=True)
+    comment = models.TextField()
+
+    def __str__(self):
+        return f"{self.user.username}:{self.id}"
+

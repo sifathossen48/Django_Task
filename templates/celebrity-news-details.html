@@ -1,6 +1,7 @@
 {% extends 'bash.html' %}
 {% load static %}
 {% block main_container %}
+        {% include 'header.html' %}
         <!-- partial -->
         <div class="flash-news-banner">
           <div class="container">
@@ -361,5 +362,6 @@
           </div>
         </div>
         <!-- main-panel ends -->
+        {% include 'footer.html' %}
         <!-- container-scroller ends -->
 {% endblock %}
