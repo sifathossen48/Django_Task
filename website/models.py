@@ -7,6 +7,7 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
     is_menu = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
+    html_file = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -122,3 +123,18 @@ class Comment(models.Model):
     def __str__(self):
         return f"{self.user.username}:{self.id}"
 
+class Contact(models.Model):
+    message = models.TextField(blank=True,null=True)
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=60)
+
+    def __str__(self):
+        return self.name
+class AboutUs(models.Model):
+    name = models.CharField(max_length=100)
+    desc = models.TextField(null=True, blank=True)
+    desc2 = models.TextField(null=True, blank=True)
+    image = models.ImageField(upload_to='about/')
+
+    def __str__(self):
+        return self.name

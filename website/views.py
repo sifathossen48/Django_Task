@@ -7,7 +7,8 @@ from django.views import View
 from django.views.generic import TemplateView
 
 from website import forms
-from website.models import Category, FlashNews, Slider, WebsiteSetting, Article, Video, LatestVideo, SportLight, Comment
+from website.models import Category, FlashNews, Slider, WebsiteSetting, Article, Video, LatestVideo, SportLight, \
+    Comment, AboutUs
 
 
 # Create your views here.
@@ -142,3 +143,46 @@ class ContactUsView(TemplateView):
         context['menus'] = Category.objects.filter(is_menu=True, is_active=True)
         context['flash_news'] = FlashNews.objects.last()
         return context
+
+class ContactView(View):
+    def post(self, request):
+        form = forms.ContactForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'You data has been successfully.')
+        else:
+            messages.error(request,'Invalid! Please try again.')
+        return redirect('/contact/')
+class AboutUsView(TemplateView):
+    template_name = 'aboutus.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['menus'] = Category.objects.filter(is_menu=True, is_active=True)
+        context['flash_news'] = FlashNews.objects.last()
+        context['aboutus'] = AboutUs.objects.last()
+        return context
+
+def business(request):
+    context = {
+        'menus': Category.objects.filter(is_menu=True, is_active=True),
+        'flash_news': FlashNews.objects.last()
+    }
+    return render(request, 'business.html', context)
+def magazine(request):
+    context = {
+        'menus': Category.objects.filter(is_menu=True, is_active=True),
+        'flash_news': FlashNews.objects.last()
+    }
+    return render(request, 'magazine.html', context)
+def politics(request):
+    context = {
+        'menus': Category.objects.filter(is_menu=True, is_active=True),
+        'flash_news': FlashNews.objects.last()
+    }
+    return render(request, 'politics.html', context)
+def sports(request):
+    context = {
+        'menus': Category.objects.filter(is_menu=True, is_active=True),
+        'flash_news': FlashNews.objects.last()
+    }
+    return render(request, 'sports.html', context)

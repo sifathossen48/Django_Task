@@ -1,0 +1,63 @@
+{% extends 'bash.html' %}
+{% load static %}
+{% block main_container%}
+
+    <div class="container-scroller">
+      <!-- partial:../partials/_navbar.html -->
+     {% include 'header.html' %}
+
+      <!-- partial -->
+         <div class="flash-news-banner">
+          <div class="container">
+            <div class="d-lg-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <span class="badge badge-dark mr-3">Flash news</span>
+                <p class="mb-0">
+                  {{flash_news.title}}
+                </p>
+              </div>
+              <div class="d-flex">
+                <span class="mr-3 text-danger">{{flash_news.timestamp}}</span>
+                <span class="text-danger">30°C,London</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="content-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card" data-aos="fade-up">
+                <div class="card-body">
+                  <div class="aboutus-wrapper">
+                    <h1 class="mt-5">
+                      About Us
+                    </h1>
+                    <p class="font-weight-600 fs-15">
+                    {{aboutus.desc}}
+                    </p>
+
+                    <img
+                      src="{{aboutus.image.url}}"
+                      alt="banner"
+                      class="img-fluid mb-5"
+                    />
+
+                    <p class="font-weight-600 fs-15 text-center">
+                      {{aboutus.desc2}}
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- container-scroller ends -->
+    <!-- partial:../partials/_footer.html -->
+    {% include 'footer.html'%}
+    <!-- partial -->
+
+{% endblock %}
